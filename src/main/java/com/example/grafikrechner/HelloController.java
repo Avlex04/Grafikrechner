@@ -37,8 +37,7 @@ import java.util.ArrayList;
     private ArrayList<Double> getzeroPoints() {
         if(coefficients[3] != 0.0){
             polynomDevision();
-        }
-        if(coefficients[2] != 0.0){
+        } else if(coefficients[2] != 0.0){
             pqFormel();
         }else if (coefficients[1] != 0.0) {
             firstGradeY();
@@ -47,10 +46,10 @@ import java.util.ArrayList;
     }
 
 
-    //überarbeitung nötig für das einsetzen der Pq-formel
     public ArrayList<Double> polynomDevision() {
+
         double[] temp = new double[4];
-        double devider = 1;
+        double devider = getFirstNull();
         for(int i = coefficients.length -1; i > 0; i --){
             temp[i-1] = coefficients[i];
             coefficients[i-1] -= coefficients[i] * devider;
@@ -109,9 +108,36 @@ import java.util.ArrayList;
         }
 
 
-        private ArrayList<TurningPoint> calcExtremePoints() {
-        ArrayList<TurningPoint> turningPoints = new ArrayList<>();
+        private double getFirstNull() {
+            double sum = 0.0;
+            double divider = 0.0;
+            divider = loop(1, divider);
+            if(divider != 0.0){
+                divider = loop(0.1, divider);
+            } if(divider != 0.0){
+                divider = loop(0.01, divider);
+            }
 
-        return turningPoints;
+
+
+
+            return divider;
+        }
+
+        private double loop(double commata, double divider) {
+            for (double j = 5.0; j > -6.0; j -= 0.1) {
+                for (int i = 0; i < coefficients.length - 1; i++) {
+                    sum = 0.0;
+                    sum += coefficients[i] * Math.pow(j, i);
+
+                    if (sum == 0.0) {
+                        divider = j;
+                        j = -6.0;
+                        return divider;
+                    }
+                }
+            }
+            return divider;
         }
 }
+
