@@ -1,4 +1,4 @@
-package extra;
+package com.example.grafikrechner;
 
 public class TurningPoint extends SpecialPoint {
 

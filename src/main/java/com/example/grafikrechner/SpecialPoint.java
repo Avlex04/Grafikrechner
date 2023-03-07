@@ -1,4 +1,4 @@
-package extra;
+package com.example.grafikrechner;
 
 public abstract class SpecialPoint {
 

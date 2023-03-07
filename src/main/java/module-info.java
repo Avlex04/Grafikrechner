@@ -4,7 +4,8 @@ module com.example.grafikrechner {
             
         requires org.controlsfx.controls;
                         requires org.kordamp.bootstrapfx.core;
-            
+    requires org.testng;
+
     opens com.example.grafikrechner to javafx.fxml;
     exports com.example.grafikrechner;
 }
