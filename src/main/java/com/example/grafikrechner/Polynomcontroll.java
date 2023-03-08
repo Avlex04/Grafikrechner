@@ -2,11 +2,13 @@ package com.example.grafikrechner;
 
 import java.util.ArrayList;
 
-public class PolynomialController {
+public class Polynomcontroll {
     double[] coefficients = new double[5];
 
     Polynom polynom = new Polynom(coefficients);
     double sum = 0.0;
+    private final ArrayList<TurningPoint> minima = new ArrayList<>();
+    private final ArrayList<TurningPoint> maxima = new ArrayList<>();
     ArrayList<Double> zeropoints = new ArrayList<>();
 
 
@@ -41,7 +43,7 @@ public class PolynomialController {
     }
 
 
-    public ArrayList<Double> polynomDevision() {
+    public void polynomDevision() {
 
         double[] temp = new double[4];
         double divider = getFirstNull();
@@ -52,7 +54,6 @@ public class PolynomialController {
         polynom.pqFormel(temp);
         zeropoints.add(divider);
 
-        return zeropoints;
     }
 
 
@@ -82,23 +83,18 @@ public class PolynomialController {
                     divider = j;
                     j = -6.0;
                     return divider;
+                }else if(sum <= 0.001){
+                    divider = j;
+                    j = -6.0;
                 }
             }
         }
         return divider;
     }
 
-    public ArrayList<TurningPoint> getExtremePoints() {
-        ArrayList<TurningPoint> extremePoints = new ArrayList<>();
-        if(coefficients[3] != 0.0) {
 
-        }else if (coefficients[2] != 0.0){
-            calcExtremePointsSquare();
-        }
-        return extremePoints;
-    }
 
-    private ArrayList<TurningPoint> calcExtremePointsSquare() {
+    private void calcExtremePointsSquare() {
         ArrayList<TurningPoint> turningPoints = new ArrayList<>();
 
         for (double xValue : this.getZeroPoints()) {
@@ -107,7 +103,6 @@ public class PolynomialController {
                 turningPoints.add(new TurningPoint(xValue, yValue, true));
             }
         }
-        return turningPoints;
     }
 
 }
