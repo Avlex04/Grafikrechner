@@ -1,5 +1,6 @@
 package com.example;
 
+import com.example.grafikrechner.Polynom;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -19,6 +20,8 @@ public class HelloApplication extends Application {
     }
 
     public static void main(String[] args) {
-        launch(args);
+        // launch(args);
+        Polynom myPolnomial = new Polynom(new double[]{0.0, 0.0, 1.0, 0.0, 1.0, 0.0});
+        System.out.println(myPolnomial.getAxisSymmetry());
     }
 }
