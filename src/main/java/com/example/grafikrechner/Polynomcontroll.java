@@ -82,7 +82,6 @@ public class Polynomcontroll {
                 if (sum == 0.0) {
                     divider = j;
                     j = -6.0;
-                    return divider;
                 }else if(sum <= 0.001){
                     divider = j;
                     j = -6.0;
