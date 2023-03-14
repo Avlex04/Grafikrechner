@@ -24,7 +24,7 @@ public class Polynomcontroll {
         return sum;
     }
 
-    public void firstGradeY(){
+    public void firstGradeY() {
 
         double sum;
         sum = coefficients[0] * - 1 / coefficients[1];
@@ -59,9 +59,7 @@ public class Polynomcontroll {
 
 
 
-
     private double getFirstNull() {
-        double sum = 0.0;
         double divider = 0.0;
         divider = loop(1, divider);
         if(divider != 0.0){
@@ -102,6 +100,15 @@ public class Polynomcontroll {
                 turningPoints.add(new TurningPoint(xValue, yValue, true));
             }
         }
+    }
+
+
+    private void extremePoints3() {
+        ArrayList<TurningPoint> turningPoints = new ArrayList<>();
+        
+        double[] derivation = polynom.firstDerivations();
+
+
     }
 
 }
