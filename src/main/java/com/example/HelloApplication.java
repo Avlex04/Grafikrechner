@@ -20,8 +20,6 @@ public class HelloApplication extends Application {
     }
 
     public static void main(String[] args) {
-        // launch(args);
-        Polynom myPolnomial = new Polynom(new double[]{0.0, 0.0, 1.0, 0.0, 1.0, 0.0});
-        System.out.println(myPolnomial.getAxisSymmetry());
+        launch(args);
     }
 }

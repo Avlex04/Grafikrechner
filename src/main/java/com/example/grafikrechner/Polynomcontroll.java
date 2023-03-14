@@ -1,16 +1,16 @@
 package com.example.grafikrechner;
 
+import javafx.scene.canvas.Canvas;
+import javafx.scene.paint.Color;
 import java.util.ArrayList;
 
 public class Polynomcontroll {
     double[] coefficients = new double[5];
-
     Polynom polynom = new Polynom(coefficients);
     double sum = 0.0;
     private final ArrayList<TurningPoint> minima = new ArrayList<>();
     private final ArrayList<TurningPoint> maxima = new ArrayList<>();
     ArrayList<Double> zeropoints = new ArrayList<>();
-
 
     private double[] getCoefficient() {
         coefficients = new double[]{1.0, 2.0, 3.0, 4.0, 5.0};
@@ -32,16 +32,15 @@ public class Polynomcontroll {
 
     }
     public ArrayList<Double> getZeroPoints() {
-        if(coefficients[3] != 0.0){
+        if (coefficients[3] != 0.0) {
             polynomDevision();
-        } else if(coefficients[2] != 0.0){
+        } else if (coefficients[2] != 0.0) {
             polynom.pqFormel(coefficients);
-        }else if (coefficients[1] != 0.0) {
+        } else if (coefficients[1] != 0.0) {
             firstGradeY();
         }
         return zeropoints;
     }
-
 
     public void polynomDevision() {
 
@@ -55,11 +54,6 @@ public class Polynomcontroll {
         zeropoints.add(divider);
 
     }
-
-
-
-
-
     private double getFirstNull() {
         double sum = 0.0;
         double divider = 0.0;
@@ -91,8 +85,6 @@ public class Polynomcontroll {
         }
         return divider;
     }
-
-
 
     private void calcExtremePointsSquare() {
         ArrayList<TurningPoint> turningPoints = new ArrayList<>();
