@@ -16,6 +16,7 @@ public class HelloApplication extends Application {
         Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/ggrafikrechner.fxml")));
         primaryStage.setTitle("FXML Application");
         primaryStage.setScene(new Scene(root, 700, 420));
+
         primaryStage.show();
     }
 

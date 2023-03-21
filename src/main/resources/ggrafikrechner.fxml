@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.canvas.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
@@ -28,7 +29,7 @@
             <Label text="x^3" GridPane.columnIndex="5" />
             <Label text="x^2" GridPane.columnIndex="1" GridPane.rowIndex="1" />
             <Label text="x" GridPane.columnIndex="3" GridPane.rowIndex="1" />
-            <Button fx:id="checkButton" onAction="#initialize" mnemonicParsing="false" text="Werte Übergabe" GridPane.columnIndex="6" GridPane.rowIndex="1" />
+            <Button fx:id="checkButton" mnemonicParsing="false" onAction="#initialize" text="Werte Übergabe" GridPane.columnIndex="6" GridPane.rowIndex="1" />
             <TextField fx:id="hoch0" GridPane.columnIndex="4" GridPane.rowIndex="1" />
             <TextField fx:id="hoch1" GridPane.columnIndex="2" GridPane.rowIndex="1" />
             <TextField fx:id="hoch5" />
@@ -36,5 +37,6 @@
             <Label fx:id="outputLabel" GridPane.columnIndex="6" />
          </children>
       </GridPane>
+      <Canvas height="340.0" width="600.0" fx:id="canvas" />
    </children>
 </AnchorPane>
