@@ -45,7 +45,7 @@ public class grafikrechnerController {
         if (text1.matches("-?\\d+(\\.\\d+)?") && text2.matches("-?\\d+(\\.\\d+)?") && text3.matches("-?\\d+(\\.\\d+)?") && text4.matches("-?\\d+(\\.\\d+)?") && text5.matches("-?\\d+(\\.\\d+)?") && text6.matches("-?\\d+(\\.\\d+)?")) {
 
             //outputLabel.setText(text1 + "x^5" + " + " + text2 + "x^4" + " + " + text3 + "x^3" + " + " + text4 + "x^2" + " + " + text5 + "x" + " + " + text6);
-            System.out.println("text1 + \"x^5\" + \" + \" + text2 + \"x^4\" + \" + \" + text3 + \"x^3\" + \" + \" + text4 + \"x^2\" + \" + \" + text5 + \"x\" + \" + \" + text6");
+            System.out.println(text1 + "x^5" + " + " + text2 + "x^4" + " + " + text3 + "x^3" + " + " + text4 + "x^2" + " + " + text5 + "x" + " + " + text6);
         } else {
             // Display an error message on the label
             //outputLabel.setText("Bitte in jedes Feld Nummern eingeben");
@@ -54,6 +54,8 @@ public class grafikrechnerController {
     }
     public void intercept() {
         GraphicsContext gc = canvas.getGraphicsContext2D();
+
+        gc.clearRect(0, 0, canvas.getWidth(), canvas.getHeight());
 
         gc.setStroke(Color.BLACK);
         gc.setLineWidth(1);
