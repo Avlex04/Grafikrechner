@@ -1,8 +1,29 @@
 package com.example.grafikrechner;
 
+import javafx.fxml.FXML;
+import javafx.scene.control.TextField;
+
 import java.util.ArrayList;
 
 public class Polynomcontroll {
+    @FXML
+    private TextField hoch0;
+    double doub0 = Double.parseDouble(hoch0.getText());
+    @FXML
+    private TextField hoch1;
+    double doub1 = Double.parseDouble(hoch1.getText());
+    @FXML
+    private TextField hoch2;
+    double doub2 = Double.parseDouble(hoch2.getText());
+    @FXML
+    private TextField hoch3;
+    double doub3 = Double.parseDouble(hoch3.getText());
+    @FXML
+    private TextField hoch4;
+    double doub4 = Double.parseDouble(hoch4.getText());
+    @FXML
+    private TextField hoch5;
+    double doub5 = Double.parseDouble(hoch5.getText());
     double[] coefficients = new double[5];
 
     Polynom polynom = new Polynom(coefficients);
@@ -13,7 +34,7 @@ public class Polynomcontroll {
 
 
     private double[] getCoefficient() {
-        coefficients = new double[]{1.0, 2.0, 3.0, 4.0, 5.0};
+        coefficients = new double[]{doub0, doub1, doub2, doub3, doub4, doub5};
         return coefficients;
     }
 
@@ -47,7 +68,7 @@ public class Polynomcontroll {
 
         double[] temp = new double[4];
         double divider = getFirstNull();
-        for(int i = coefficients.length -1; i > 0; i --){
+        for(int i = coefficients.length -2; i > 0; i --){
             temp[i-1] = coefficients[i];
             coefficients[i-1] -= coefficients[i] * divider;
         }
@@ -103,7 +124,7 @@ public class Polynomcontroll {
     }
 
 
-    private void extremePoints3() {
+    private void extremePointsCubic() {
         ArrayList<TurningPoint> turningPoints = new ArrayList<>();
         
         double[] derivation = polynom.firstDerivations();

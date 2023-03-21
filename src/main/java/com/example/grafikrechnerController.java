@@ -31,6 +31,8 @@ public class grafikrechnerController {
     private  Canvas canvas;
 
 
+
+
     public void initialize() {
 
         // Access the text fields and do something with them
