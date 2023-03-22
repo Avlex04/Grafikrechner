@@ -152,19 +152,41 @@ public class Polynom {
         int evenNumbers = 0;
         int oddNumbers = 0;
 
-        for (int i = 0; i< coefficients.length; i++){
-            if(coefficients[i] != 0){
-                if(i % 2 == 0) evenNumbers ++; else oddNumbers++;
+        for (int i = 0; i < coefficients.length; i++){
+            if (coefficients[i] != 0){
+                if (i % 2 == 0) evenNumbers ++; else oddNumbers++;
                 totalNumbers++;
             }
         }
-        if(evenNumbers == totalNumbers){
+        if (evenNumbers == totalNumbers){
             symmetry = SYMMETRIES[0];
         } else if(oddNumbers == totalNumbers){
             symmetry = SYMMETRIES[1];
         } else {
             symmetry = SYMMETRIES[2];
         }
+    }
+
+    public boolean getAxisSymmetry(){
+        int c = 0;
+        for (double x : this.coefficients){
+            if (x != 0.0 && c % 2 != 0){
+                return false;
+            }
+            c += 1;
+        }
+        return true;
+    }
+
+    public boolean getPointSymmetry(){
+        int c = 0;
+        for (double x : this.coefficients) {
+            if (x != 0.0 && c % 2 == 0) {
+                return false;
+            }
+            c += 1;
+        }
+        return true;
     }
 
     @Override
