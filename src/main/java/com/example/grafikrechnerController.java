@@ -30,8 +30,10 @@ public class grafikrechnerController {
     private Canvas canvas;
 
     private void drawPolynomial(Polynom methodPolynomial) {
+
         // get the graphics context of the canvas to draw on it
         GraphicsContext gc = canvas.getGraphicsContext2D();
+
         // set the color of the lines
         gc.setStroke(Color.BLACK);
         // set the width of the lines
@@ -50,6 +52,7 @@ public class grafikrechnerController {
 
         // Drawing Polynom on canvas
         for (double x = xMin; x < xMax; x += 0.1) {
+
             double y = polynomial.calculateY(x);
             double xPixel = (x - xMin) * xScale;
             double yPixel = canvas.getHeight() - (y - yMin) * yScale;
@@ -61,6 +64,7 @@ public class grafikrechnerController {
     }
 
     public void initialize() {
+
 
         // Access the text fields and do something with them
         String text1 = hoch5.getText();
@@ -87,7 +91,7 @@ public class grafikrechnerController {
     }
     public void intercept() {
         GraphicsContext gc = canvas.getGraphicsContext2D();
-
+        gc.clearRect(0, 0, canvas.getWidth(), canvas.getHeight());
 
 
         gc.setStroke(Color.GREY);

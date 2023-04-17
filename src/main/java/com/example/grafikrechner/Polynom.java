@@ -28,6 +28,7 @@ public class Polynom {
     ArrayList<Double> zeropoints = new ArrayList<>();
 
 
+
     public double calculateY(double x) {
         double sum = 0.;
         for (int i = 0; i < coefficients.length; i++) {
@@ -130,6 +131,8 @@ public class Polynom {
                 this.maxima = turningPoint;
             }
         }
+
+
 
 
     }
