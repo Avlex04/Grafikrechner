@@ -1,6 +1,8 @@
 package com.example.grafikrechner;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Objects;
 
 public class Polynom {
 
@@ -13,6 +15,18 @@ public class Polynom {
 
     public Polynom(double[] coefficients) {
         this.coefficients = coefficients;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+
+        // Check if the object is a Polynom
+        if (!(o instanceof Polynom polynom)) return false;
+
+        // Comparison of Coefficients
+        return Arrays.equals(this.coefficients, polynom.coefficients);
+
     }
 
 

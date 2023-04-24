@@ -35,8 +35,25 @@
             <TextField fx:id="hoch5" />
             <Label text="x^5" GridPane.columnIndex="1" />
             <Label fx:id="outputLabel" GridPane.columnIndex="6" />
+             <Label fx:id="symmetry" GridPane.columnIndex="0" GridPane.rowIndex="2" />
          </children>
       </GridPane>
       <Canvas fx:id="canvas" height="500.0" width="700.0" />
+
+       <MenuBar>
+           <menus>
+               <Menu text="Scale">
+                   <items>
+                       <MenuItem onAction="#handleMenuItemAction" text="5" />
+                       <MenuItem onAction="#handleMenuItemAction" text="10" />
+                       <MenuItem onAction="#handleMenuItemAction" text="15" />
+                       <MenuItem onAction="#handleMenuItemAction" text="20" />
+                       <MenuItem onAction="#handleMenuItemAction" text="25" />
+                       <MenuItem onAction="#handleMenuItemAction" text="50" />
+                   </items>
+               </Menu>
+           </menus>
+       </MenuBar>
+
    </children>
 </AnchorPane>
