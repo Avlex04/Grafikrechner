@@ -2,12 +2,15 @@ package com.example;
 import com.example.grafikrechner.Polynom;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.control.Label;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.TextField;
 import javafx.scene.paint.Color;
+import javafx.scene.text.TextAlignment;
 
 import java.util.ArrayList;
 import java.util.function.Function;
@@ -82,12 +85,12 @@ public class grafikrechnerController {
 
 
         // Access the text fields and do something with them
-        String text1 = hoch5.getText();
-        String text2 = hoch4.getText();
-        String text3 = hoch3.getText();
-        String text4 = hoch2.getText();
-        String text5 = hoch1.getText();
-        String text6 = hoch0.getText();
+        String text1 = hoch0.getText();
+        String text2 = hoch1.getText();
+        String text3 = hoch2.getText();
+        String text4 = hoch3.getText();
+        String text5 = hoch4.getText();
+        String text6 = hoch5.getText();
         intercept();
         System.out.println(polynomials);
         if (text1.matches("-?\\d+(\\.\\d+)?") && text2.matches("-?\\d+(\\.\\d+)?") && text3.matches("-?\\d+(\\.\\d+)?") && text4.matches("-?\\d+(\\.\\d+)?") && text5.matches("-?\\d+(\\.\\d+)?") && text6.matches("-?\\d+(\\.\\d+)?")) {
